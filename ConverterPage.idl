@@ -1,0 +1,9 @@
+namespace VideoDurationToMinecraftDays
+{
+    [default_interface]
+    runtimeclass ConverterPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        ConverterPage();
+        Int32 MyProperty;
+    }
+}

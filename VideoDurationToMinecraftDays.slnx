@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="VideoDurationToMinecraftDays.vcxproj" Id="62cddb20-1e1c-4ae3-9b86-c460667eb332">
+    <Deploy />
+  </Project>
+</Solution>
