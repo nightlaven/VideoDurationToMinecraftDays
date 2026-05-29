@@ -33,7 +33,9 @@ namespace winrt::VideoDurationToMinecraftDays::implementation
 	}
 }
 
-void winrt::VideoDurationToMinecraftDays::implementation::ConverterPage::ConverterNumberBox_ValueChanged(winrt::Microsoft::UI::Xaml::Controls::NumberBox const& sender, winrt::Microsoft::UI::Xaml::Controls::NumberBoxValueChangedEventArgs const& args)
+void winrt::VideoDurationToMinecraftDays::implementation::ConverterPage::ConverterNumberBox_ValueChanged
+(winrt::Microsoft::UI::Xaml::Controls::NumberBox const& sender, 
+	winrt::Microsoft::UI::Xaml::Controls::NumberBoxValueChangedEventArgs const& args)
 {
     int inputValue = ConverterNumberBox().Value();
     InputHandler(inputValue);

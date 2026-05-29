@@ -18,8 +18,6 @@ using namespace Utility;
 
 namespace winrt::VideoDurationToMinecraftDays::implementation
 {
-    
-
     int32_t MainWindow::MyProperty()
     {
         throw hresult_not_implemented();
@@ -30,7 +28,7 @@ namespace winrt::VideoDurationToMinecraftDays::implementation
         throw hresult_not_implemented();
     }
 
-    void MainWindow::InitializeComponent() 
+    void MainWindow::InitializeComponent()
     {
         MainWindowT::InitializeComponent();
 
@@ -38,6 +36,11 @@ namespace winrt::VideoDurationToMinecraftDays::implementation
         SetTitleBar(AppTitleBar());
 
         auto appWindow = this->AppWindow();
+        HandleWindow(appWindow);
+    }
+
+    void MainWindow::HandleWindow(auto appWindow)
+    {
         appWindow.Resize(
             SizeInt32(425, 250)
         );
@@ -52,7 +55,8 @@ namespace winrt::VideoDurationToMinecraftDays::implementation
     }
 }
 
-void winrt::VideoDurationToMinecraftDays::implementation::MainWindow::AppTitleBar_BackRequested(winrt::Microsoft::UI::Xaml::Controls::TitleBar const& sender, winrt::Windows::Foundation::IInspectable const& args)
+void winrt::VideoDurationToMinecraftDays::implementation::MainWindow::AppTitleBar_BackRequested
+(winrt::Microsoft::UI::Xaml::Controls::TitleBar const& sender, winrt::Windows::Foundation::IInspectable const& args)
 {
     if (rootFrame().CanGoBack())
     {
