@@ -29,7 +29,8 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
     <AppContainerApplication>false</AppContainerApplication>
-    <AppxPackage>true</AppxPackage>
+    <AppxPackage>false</AppxPackage>
+    <WindowsPackageType>None</WindowsPackageType>
     <ApplicationType>Windows Store</ApplicationType>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -131,11 +132,7 @@
     <Manifest Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Converter.h" />
-    <ClInclude Include="ConverterPage.xaml.h">
-      <DependentUpon>ConverterPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </ClInclude>
+    <ClInclude Include="Models\Converter.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -144,27 +141,21 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="ResultPage.xaml.h">
-      <DependentUpon>ResultPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <ClInclude Include="Views\ConverterPage.xaml.h">
+      <DependentUpon>Views\ConverterPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Views\ResultPage.xaml.h">
+      <DependentUpon>Views\ResultPage.xaml</DependentUpon>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
-    <Page Include="ConverterPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="MainWindow.xaml" />
-    <Page Include="ResultPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
+    <Page Include="Views\ConverterPage.xaml" />
+    <Page Include="Views\ResultPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Converter.cpp" />
-    <ClCompile Include="ConverterPage.xaml.cpp">
-      <DependentUpon>ConverterPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </ClCompile>
+    <ClCompile Include="Models\Converter.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -175,24 +166,20 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
-    <ClCompile Include="ResultPage.xaml.cpp">
-      <DependentUpon>ResultPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <ClCompile Include="Views\ConverterPage.xaml.cpp">
+      <DependentUpon>Views\ConverterPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Views\ResultPage.xaml.cpp">
+      <DependentUpon>Views\ResultPage.xaml</DependentUpon>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="ConverterPage.idl">
-      <DependentUpon>ConverterPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Midl>
     <Midl Include="MainWindow.idl">
       <SubType>Code</SubType>
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Midl>
-    <Midl Include="ResultPage.idl">
-      <DependentUpon>ResultPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Midl>
+    <Midl Include="Views\ConverterPage.idl" />
+    <Midl Include="Views\ResultPage.idl" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt">

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "MainWindow.xaml.h"
-#include "Converter.h"
+#include "Models/Converter.h"
 #include <winrt/Microsoft.UI.Windowing.h>
 #include <winrt/Windows.Graphics.h>
 #if __has_include("MainWindow.g.cpp")

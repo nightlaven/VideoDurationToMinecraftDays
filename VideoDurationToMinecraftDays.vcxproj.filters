@@ -5,23 +5,33 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xaml" />
-    <Page Include="ResultPage.xaml" />
-    <Page Include="ConverterPage.xaml" />
+    <Page Include="Views\ResultPage.xaml">
+      <Filter>Views</Filter>
+    </Page>
+    <Page Include="Views\ConverterPage.xaml">
+      <Filter>Views</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="MainWindow.idl" />
+    <Midl Include="Views\ResultPage.idl">
+      <Filter>Views</Filter>
+    </Midl>
+    <Midl Include="Views\ConverterPage.idl">
+      <Filter>Views</Filter>
+    </Midl>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
-    <ClCompile Include="Converter.cpp">
+    <ClCompile Include="Models\Converter.cpp">
       <Filter>Models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Converter.h">
+    <ClInclude Include="Models\Converter.h">
       <Filter>Models</Filter>
     </ClInclude>
   </ItemGroup>
@@ -193,15 +203,15 @@
     <Filter Include="Models">
       <UniqueIdentifier>{b66b903a-1b46-4391-8ebc-8a28813bc58b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{70c88483-6ad8-4dc9-bc87-76163a971396}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="app.manifest" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

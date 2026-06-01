@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "ConverterPage.xaml.h"
-#include "Converter.h"
+#include "Models/Converter.h"
 #if __has_include("ConverterPage.g.cpp")
 #include "ConverterPage.g.cpp"
 #endif
