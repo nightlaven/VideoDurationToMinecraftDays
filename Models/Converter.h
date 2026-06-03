@@ -3,7 +3,7 @@
 using namespace std;
 using namespace winrt;
 
-namespace Utility 
+namespace Utility
 {
 	enum class InputCondition
 	{
@@ -13,56 +13,51 @@ namespace Utility
 	class Converter
 	{
 	private:int hours = 0;
-	private:int minutes = 0;
-	private:int daysResult = 0;
-	private:int minutesResult = 0;
+		   int minutes = 0;
+		   int daysResult = 0;
+		   int minutesResult = 0;
 
-	private:InputCondition inputCondition = InputCondition::Hours;
+		   InputCondition inputCondition = InputCondition::Hours;
 
 	public:const int MinutesPerDay = 20;
-	public:const int MinutesPerHour = 60;
+		  const int MinutesPerHour = 60;
 
-	public:const int GetMinutes() const {
-		return minutes;
-	}
+		  const int GetMinutes() const {
+			  return minutes;
+		  }
+		  const int GetHours() const {
+			  return hours;
+		  }
+		  const int GetDaysResult() const {
+			  return daysResult;
+		  }
+		  const int GetMinutesResult() const {
+			  return minutesResult;
+		  }
+		  const hstring GetInputConditionTxt() const {
+			  switch (inputCondition) {
+			  case InputCondition::Hours:
+				  return L"Enter a Hours";
+			  case InputCondition::Minutes:
+				  return L"Enter a Minutes";
+			  case  InputCondition::Result:
+				  wstring results;
+				  results = L"Result: " + to_wstring(daysResult) + L" Days, " + to_wstring(minutes) + L" Minutes";
+				  hstring convertedResults{ results };
+				  return convertedResults;
+			  };
+		  }
+		  const InputCondition GetInputCondition() const
+		  {
+			  return inputCondition;
+		  }
 
-	public:const int GetHours() const {
-		return hours;
-	}
-
-	public:const int GetDaysResult() const {
-		return daysResult;
-	}
-
-	public:const int GetMinutesResult() const {
-		return minutesResult;
-	}
-
-	public:const hstring GetInputConditionTxt() const {
-		switch (inputCondition) {
-		case InputCondition::Hours:
-			return L"Enter a Hours";
-		case InputCondition::Minutes:
-			return L"Enter a Minutes";
-		case  InputCondition::Result:
-			wstring results;
-			results = L"Result: " + to_wstring(daysResult) + L" Days, " + to_wstring(minutes) + L" Minutes";
-			hstring convertedResults{ results };
-			return convertedResults;
-		};
-	}
-
-	public:const InputCondition GetInputCondition() const
-	{
-		return inputCondition;
-	}
-
-	public:void SetMinutes(int value);
-	public:void SetHours(int value);
-	public:void SetInputConditon(InputCondition value);
-    public:void DaysResultIncrement();
-    public:void SetMinutesResult(int value);
-	public:void ClearValues();
+		  void SetMinutes(int value);
+		  void SetHours(int value);
+		  void SetInputConditon(InputCondition value);
+		  void DaysResultIncrement();
+		  void SetMinutesResult(int value);
+		  void ClearValues();
 	};
 
 	extern Converter GlobalConverter;
